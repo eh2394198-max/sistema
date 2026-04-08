@@ -1,11 +1,15 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\UsuarioController; // Importante importar el controlador
+use App\Http\Controllers\UsuarioController;
+use App\Http\Controllers\ProductoController;
 
 Route::get('/', function () {
     return redirect()->route('usuarios.index');
 });
 
-// Esta línea crea automáticamente las 7 rutas del CRUD
+// CRUD de usuarios
 Route::resource('usuarios', UsuarioController::class);
+
+// CRUD de productos
+Route::resource('productos', ProductoController::class);
